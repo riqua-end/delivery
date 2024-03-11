@@ -30,6 +30,16 @@ dependencies {
 
     //jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Swagger
+
+    // 스프링 버전 2.X.X는 springdoc-openai-ui
+    // implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.7.0'
+
+    // 스프링 버전 3.X.X는 springdoc-openai-starter-webmvc-ui
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.3.0'
+
+
 }
 
 test {
