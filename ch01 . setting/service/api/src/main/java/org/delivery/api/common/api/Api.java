@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.delivery.api.common.error.ErrorCodeInterface;
 
 // Api 클래스: 응답 데이터를 담는 객체
 @Data
@@ -30,6 +31,38 @@ public class Api<T> {
         api.body = data;
 
         // Api 객체 반환
+        return api;
+    }
+
+    public static Api<Object> ERROR(Result result){
+        var api = new Api<Object>();
+
+        api.result = result;
+
+        return api;
+    }
+
+    public static Api<Object> ERROR(ErrorCodeInterface errorCodeInterface){
+        var api = new Api<Object>();
+
+        api.result = Result.ERROR(errorCodeInterface);
+
+        return api;
+    }
+
+    public static Api<Object> ERROR(ErrorCodeInterface errorCodeInterface, Throwable tx){
+        var api = new Api<Object>();
+
+        api.result = Result.ERROR(errorCodeInterface, tx);
+
+        return api;
+    }
+
+    public static Api<Object> ERROR(ErrorCodeInterface errorCodeInterface, String description){
+        var api = new Api<Object>();
+
+        api.result = Result.ERROR(errorCodeInterface, description);
+
         return api;
     }
 
