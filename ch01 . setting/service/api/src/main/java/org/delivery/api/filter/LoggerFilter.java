@@ -16,11 +16,13 @@ public class LoggerFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
         // 요청 데이터를 캐싱하여 요청 본문을 포함한 모든 요청 정보를 캡처함
         var req = new ContentCachingRequestWrapper((HttpServletRequest) request);
         // 응답 데이터를 캐싱하여 응답 본문을 포함한 모든 응답 정보를 캡처함
         var res = new ContentCachingResponseWrapper((HttpServletResponse) response);
 
+        log.info("INIT URI : {} ", req.getRequestURI());
         // 필터 체인 진행
         chain.doFilter(req, res);
 
