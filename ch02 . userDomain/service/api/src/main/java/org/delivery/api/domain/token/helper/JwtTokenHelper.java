@@ -37,6 +37,10 @@ public class JwtTokenHelper implements TokenHelperInterface {
     public TokenDto issueAccessToken(Map<String, Object> data) {
         // 1. 현재 시간 + 토큰의 만료 시간 계산
         var expiredLocalDateTime = LocalDateTime.now().plusHours(accessTokenPlusHour);
+        // 1-1. 시스템 기본 시간대를 사용하여 LocalDateTime을 Date로 변환
+        // LocalDateTime 은 시간 정보만 가지고 있고 시간대 정보를 가지고 있지 않음.
+        // atZone() 메서드는 시스템 기본 시간대 정보를 반환함
+        // expiredLocalDateTime 객체를 시스템 기본 시간대를 기준으로 Date 객체로 변환.
         var expiredAt = Date.from(expiredLocalDateTime.atZone(ZoneId.systemDefault()).toInstant());
 
         // 2. 토큰 서명을 위한 키 생성
