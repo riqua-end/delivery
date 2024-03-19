@@ -60,4 +60,14 @@ public class UserBusiness {
 
         return tokenBusiness.issueToken(userEntity);
     }
+
+    /**
+     * 사용자 인증 조회
+     */
+    public UserResponse me(Long user) {
+
+        var userEntity = userService.getUserWithThrow(user);
+
+        return userConverter.toResponse(userEntity);
+    }
 }

@@ -52,5 +52,14 @@ public class UserService {
                 UserStatus.REGISTERED
         ).orElseThrow(()->new ApiException(UserErrorCode.USER_NOT_FOUND, "사용자 찾을 수 없음"));
     }
+
+    // overloading
+    public UserEntity getUserWithThrow(Long userId) {
+
+        return userRepository.findFirstByIdAndStatusOrderByIdDesc(
+                userId,
+                UserStatus.REGISTERED
+        ).orElseThrow(()->new ApiException(UserErrorCode.USER_NOT_FOUND));
+    }
 }
 
