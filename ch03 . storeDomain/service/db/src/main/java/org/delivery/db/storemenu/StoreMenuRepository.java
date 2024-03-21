@@ -14,5 +14,5 @@ public interface StoreMenuRepository extends JpaRepository<StoreMenuEntity, Long
 
     // 특정 가게의 메뉴 가져오기
     // select * from store_menu where store_id = ? and status = ? order by sequence desc
-    List<StoreMenuEntity> findFirstByStoreIdAndStatusOrderBySequenceDesc(Long storeId, StoreMenuStatus status);
+    List<StoreMenuEntity> findAllByStoreIdAndStatusOrderBySequenceDesc(Long storeId, StoreMenuStatus status);
 }
