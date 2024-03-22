@@ -6,6 +6,6 @@ Language : Java 17
 Database Library : JPA
 Database Server : Mysql 8.X
 ```
-[ Ch01 . setting ]
+[ ERD ]
 ---
-* 멀티 모듈 설정
+![delivery_db](https://github.com/riqua-end/delivery/assets/129530989/fde27604-c08a-47ae-8a91-b1cbfc6ebc07)
