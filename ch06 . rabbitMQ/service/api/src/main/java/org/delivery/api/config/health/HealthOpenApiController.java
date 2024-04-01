@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/open-api")
 public class HealthOpenApiController {
 
-    private final Producer producer;
-
     @GetMapping("/health")
     public void health(){
         log.info("health call");
-        producer.producer("delivery.exchange", "delivery.key", "hello");
     }
 }

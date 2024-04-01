@@ -2,4 +2,5 @@ rootProject.name = 'service'
 include 'api'
 include 'db'
 include 'store-admin'
+include 'common'
 
