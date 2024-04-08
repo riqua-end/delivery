@@ -1,4 +1,4 @@
-package org.delivery.storeadmin.domain.user.service;
+package org.delivery.storeadmin.domain.storeuser.service;
 
 import lombok.RequiredArgsConstructor;
 import org.delivery.db.storeuser.StoreUserEntity;

@@ -1,8 +1,5 @@
-package org.delivery.storeadmin.domain.user.controller.model;
+package org.delivery.storeadmin.domain.storeuser.controller.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
