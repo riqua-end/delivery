@@ -18,5 +18,8 @@ public class UserOrderRequest {
     // 특정 메뉴 id
 
     @NotNull
+    private Long storeId;
+
+    @NotNull
     private List<Long> storeMenuIdList;
 }

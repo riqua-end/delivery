@@ -53,7 +53,7 @@ public class UserOrderBusiness {
                 .map(storeMenuService::getStoreMenuWithThrow)
                 .collect(Collectors.toList());
 
-        var userOrderEntity = userOrderConverter.toEntity(user, storeMenuEntityList);
+        var userOrderEntity = userOrderConverter.toEntity(user, body.getStoreId(), storeMenuEntityList);
 
         // 주문
         var newUserOrderEntity = userOrderService.order(userOrderEntity);
@@ -96,7 +96,7 @@ public class UserOrderBusiness {
                     }).collect(Collectors.toList());
 
             // 사용자가 주문한 스토어 TODO 리펙토링 필요 - Null Point
-            var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().orElseThrow().getStoreId());
+            var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().get().getStoreId());
 
             return UserOrderDetailResponse.builder()
                     .userOrderResponse(userOrderConverter.toResponse(it)) // 사용자의 주문

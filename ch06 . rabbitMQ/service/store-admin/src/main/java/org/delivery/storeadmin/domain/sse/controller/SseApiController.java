@@ -68,8 +68,8 @@ public class SseApiController {
         var userSseConnection = sseConnectionPool.getSession(userSession.getStoreId().toString());
 
         Optional.ofNullable(userSseConnection)
-                .ifPresent(it ->{
-                    it.sendMessage("배달의 민족 주문!");
+                .ifPresent(it->{
+                    it.sendMessage("hello world");
                 });
     }
 
