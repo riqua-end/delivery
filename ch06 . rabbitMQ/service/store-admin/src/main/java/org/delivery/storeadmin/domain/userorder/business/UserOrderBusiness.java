@@ -68,9 +68,11 @@ public class UserOrderBusiness {
 
         log.info("Retrieved storeId: {}", userOrderEntity.getStoreId());
         var userConnection = sseConnectionPool.getSession(userOrderEntity.getStoreId().toString());
-        log.info("Retrieved UserSseConnection: {}", userConnection); // 여기서 userConnection 값 출력
+        log.info("Retrieved userConnection : {}", userConnection); // 여기서 userConnection 값 출력
 
         // 사용자에게 push
-        userConnection.sendMessage(push);
+        if(userConnection != null){
+            userConnection.sendMessage(push);
+        }
     }
 }
