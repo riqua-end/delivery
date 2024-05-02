@@ -9,7 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+/*@Configuration
 public class ObjectMapperConfig {
 
     @Bean // ObjectMapper 객체를 Spring Bean으로 등록. 즉 애플리케이션 전반에 ObjectMapper를 주입받아 사용가능.
@@ -37,4 +37,4 @@ public class ObjectMapperConfig {
 
         return objectMapper;
     }
-}
+}*/
