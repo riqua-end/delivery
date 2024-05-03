@@ -1,3 +1,4 @@
+/*
 package org.delivery.db.userordermenu;
 
 import org.delivery.db.userordermenu.enums.UserOrderMenuStatus;
@@ -10,3 +11,4 @@ public interface UserOrderMenuRepository extends JpaRepository<UserOrderMenuEnti
     // select * from user_order_menu where user_order_id = ? status = ?
     List<UserOrderMenuEntity> findAllByUserOrderIdAndStatus(Long userOrderId, UserOrderMenuStatus status);
 }
+*/

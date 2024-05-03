@@ -23,8 +23,8 @@ public class UserOrderService {
         Long id,
         Long userId
     ){
-        return userOrderRepository.findAllByIdAndUserId(id, userId)
-                .orElseThrow(()->new ApiException(ErrorCode.NULL_POINT));
+        return Optional.ofNullable(userOrderRepository.findAllByIdAndUserId(id, userId)
+                ).orElseThrow(()->new ApiException(ErrorCode.NULL_POINT));
     }
 
     // 특정 주문 엔티티 조회 ( 존재하지 않으면 Null point 에러 )
@@ -32,8 +32,8 @@ public class UserOrderService {
         Long id,
         Long userId
     ){
-        return userOrderRepository.findAllByIdAndStatusAndUserId(id, UserOrderStatus.REGISTERED, userId)
-                .orElseThrow(()->new ApiException(ErrorCode.NULL_POINT));
+        return Optional.ofNullable(userOrderRepository.findAllByIdAndStatusAndUserId(id, UserOrderStatus.REGISTERED, userId)
+                ).orElseThrow(()->new ApiException(ErrorCode.NULL_POINT));
     }
 
     // 사용자의 주문 목록 조회
