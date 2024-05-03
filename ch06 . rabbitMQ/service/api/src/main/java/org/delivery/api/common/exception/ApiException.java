@@ -1,7 +1,8 @@
-package org.delivery.api.common.exception;
+/*
+package org.delivery.common.exception;
 
 import lombok.Getter;
-import org.delivery.api.common.error.ErrorCodeInterface;
+import org.delivery.common.error.ErrorCodeInterface;
 
 @Getter
 public class ApiException extends RuntimeException implements ApiExceptionInterface{
@@ -36,3 +37,4 @@ public class ApiException extends RuntimeException implements ApiExceptionInterf
 
 
 }
+*/

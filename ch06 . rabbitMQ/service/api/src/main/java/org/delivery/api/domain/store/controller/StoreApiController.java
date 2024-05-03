@@ -1,7 +1,7 @@
 package org.delivery.api.domain.store.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.api.Api;
+import org.delivery.common.api.Api;
 import org.delivery.api.domain.store.business.StoreBusiness;
 import org.delivery.api.domain.store.controller.model.StoreResponse;
 import org.delivery.db.store.enums.StoreCategory;

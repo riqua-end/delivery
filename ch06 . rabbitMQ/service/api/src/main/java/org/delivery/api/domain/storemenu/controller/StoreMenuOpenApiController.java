@@ -2,7 +2,7 @@ package org.delivery.api.domain.storemenu.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.api.Api;
+import org.delivery.common.api.Api;
 import org.delivery.api.domain.storemenu.business.StoreMenuBusiness;
 import org.delivery.api.domain.storemenu.controller.model.StoreMenuRegisterRequest;
 import org.delivery.api.domain.storemenu.controller.model.StoreMenuResponse;

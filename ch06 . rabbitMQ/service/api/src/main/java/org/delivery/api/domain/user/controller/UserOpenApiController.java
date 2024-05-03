@@ -3,7 +3,7 @@ package org.delivery.api.domain.user.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
-import org.delivery.api.common.api.Api;
+import org.delivery.common.api.Api;
 import org.delivery.api.domain.token.controller.model.TokenResponse;
 import org.delivery.api.domain.user.business.UserBusiness;
 import org.delivery.api.domain.user.controller.model.UserLoginRequest;

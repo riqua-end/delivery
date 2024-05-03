@@ -1,10 +1,11 @@
-package org.delivery.api.common.api;
+/*
+package org.delivery.common.api;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.delivery.api.common.error.ErrorCodeInterface;
+import org.delivery.common.error.ErrorCodeInterface;
 
 // Api 클래스: 응답 데이터를 담는 객체
 @Data
@@ -68,3 +69,4 @@ public class Api<T> {
 
 }
 
+*/

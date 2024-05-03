@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-@AllArgsConstructor
+/*@AllArgsConstructor
 @Getter
 public enum ErrorCode implements ErrorCodeInterface{
 
@@ -23,4 +23,4 @@ public enum ErrorCode implements ErrorCodeInterface{
     private final Integer errorCode;
 
     private final String description;
-}
+}*/
