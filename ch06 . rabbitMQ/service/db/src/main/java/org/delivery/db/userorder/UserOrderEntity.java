@@ -7,10 +7,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.delivery.db.BaseEntity;
+import org.delivery.db.store.StoreEntity;
 import org.delivery.db.userorder.enums.UserOrderStatus;
+import org.delivery.db.userordermenu.UserOrderMenuEntity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -24,8 +27,9 @@ public class UserOrderEntity extends BaseEntity {
     @Column(nullable = false)
     private Long userId;    // user table 1:N
 
-    @Column(nullable = false)
-    private Long storeId;
+    @JoinColumn(nullable = false, name = "store_id") // @ManyToOne 어노테이션은 @Column 이랑 같이 사용 불가함. @JoinColumn 으로 사용
+    @ManyToOne
+    private StoreEntity store; // Schema-validation: missing column [store_entity_id] in table [user_order]
 
     @Column(length = 50 , nullable = false , columnDefinition = "varchar")
     @Enumerated(EnumType.STRING)
@@ -43,4 +47,7 @@ public class UserOrderEntity extends BaseEntity {
     private LocalDateTime deliveryStartedAt;
 
     private LocalDateTime receivedAt;
+
+    @OneToMany(mappedBy = "userOrder") // UserOrderEntity 와 연결
+    private List<UserOrderMenuEntity> userOrderMenuList;
 }
