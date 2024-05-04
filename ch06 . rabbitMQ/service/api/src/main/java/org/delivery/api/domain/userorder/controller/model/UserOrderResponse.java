@@ -1,3 +1,4 @@
+/*
 package org.delivery.api.domain.userorder.controller.model;
 
 import jakarta.validation.constraints.NotNull;
@@ -32,3 +33,4 @@ public class UserOrderResponse {
 
     private LocalDateTime receivedAt;
 }
+*/
