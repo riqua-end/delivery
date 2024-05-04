@@ -71,8 +71,8 @@ public class UserOrderBusiness {
         log.info("Retrieved userConnection : {}", userConnection); // 여기서 userConnection 값 출력
 
         // 사용자에게 push
-        /*if(userConnection != null){
+        if(userConnection != null){
             userConnection.sendMessage(push);
-        }*/
+        }
     }
 }
