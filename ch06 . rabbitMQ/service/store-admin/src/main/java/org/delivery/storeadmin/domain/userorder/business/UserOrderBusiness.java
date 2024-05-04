@@ -51,7 +51,7 @@ public class UserOrderBusiness {
         // user order menu -> store menu
         var storeMenuResponseList = userOrderMenuList.stream()
                 .map(userOrderMenuEntity-> {
-                    return storeMenuService.getStoreMenuWithThrow(userOrderMenuEntity.getStoreMenuId());
+                    return storeMenuService.getStoreMenuWithThrow(userOrderMenuEntity.getStoreMenu().getId());
                 })
                 .map(storeMenuEntity -> {
                     return storeMenuConverter.toResponse(storeMenuEntity);
@@ -66,13 +66,13 @@ public class UserOrderBusiness {
                 .storeMenuResponseList(storeMenuResponseList)
                 .build();
 
-        log.info("Retrieved storeId: {}", userOrderEntity.getStoreId());
-        var userConnection = sseConnectionPool.getSession(userOrderEntity.getStoreId().toString());
+        log.info("Retrieved storeId: {}", userOrderEntity.getStore());
+        var userConnection = sseConnectionPool.getSession(userOrderEntity.getStore().getId().toString());
         log.info("Retrieved userConnection : {}", userConnection); // 여기서 userConnection 값 출력
 
         // 사용자에게 push
-        if(userConnection != null){
+        /*if(userConnection != null){
             userConnection.sendMessage(push);
-        }
+        }*/
     }
 }

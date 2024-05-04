@@ -10,7 +10,7 @@ public class UserOrderConverter {
     public UserOrderResponse toResponse(UserOrderEntity userOrderEntity){
         return UserOrderResponse.builder()
                 .id(userOrderEntity.getId())
-                .storeId(userOrderEntity.getStoreId())
+                .storeId(userOrderEntity.getStore().getId())
                 .userId(userOrderEntity.getUserId())
                 .status(userOrderEntity.getStatus())
                 .amount(userOrderEntity.getAmount())
