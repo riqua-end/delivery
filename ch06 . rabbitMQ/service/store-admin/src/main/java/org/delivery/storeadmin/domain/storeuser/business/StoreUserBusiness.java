@@ -8,10 +8,11 @@ import org.delivery.storeadmin.domain.storeuser.controller.model.StoreUserRegist
 import org.delivery.storeadmin.domain.storeuser.controller.model.StoreUserResponse;
 import org.delivery.storeadmin.domain.storeuser.converter.StoreUserConverter;
 import org.delivery.storeadmin.domain.storeuser.service.StoreUserService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Business
+@Service
 @RequiredArgsConstructor
 public class StoreUserBusiness {
 
