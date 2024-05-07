@@ -1,3 +1,4 @@
+/*
 package org.delivery.api.domain.userorder.controller.model;
 
 import lombok.AllArgsConstructor;
@@ -24,3 +25,4 @@ public class UserOrderDetailResponse {
     // 어떤 메뉴를 주문했는지 N건에 대한 내역
     private List<StoreMenuResponse> storeMenuResponseList;
 }
+*/
