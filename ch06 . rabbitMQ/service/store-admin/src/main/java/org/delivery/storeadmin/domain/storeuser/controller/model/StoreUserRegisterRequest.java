@@ -14,7 +14,7 @@ import org.delivery.db.storeuser.enums.StoreUserRole;
 public class StoreUserRegisterRequest {
 
     @NotNull
-    @JsonProperty("storeName")
+    @JsonProperty("store_name")
     private String storeName;
 
     @NotBlank
