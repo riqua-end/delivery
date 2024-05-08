@@ -1,0 +1,10 @@
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.5.0'
+}
+rootProject.name = 'service'
+include 'api'
+include 'db'
+include 'store-admin'
+include 'common'
+include 'apigw'
+
