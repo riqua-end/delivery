@@ -44,6 +44,8 @@ public class UserSessionResolver implements HandlerMethodArgumentResolver {
         // 사용자 정보를 데이터베이스에서 가져옴
         var userEntity = userService.getUserWithThrow((Long) userId);
 
+        // TODO account 서버에 user domain 부분도 처리 필요
+
         // 사용자 정보 세팅
 
         return User.builder()

@@ -39,25 +39,23 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        // TODO header 검증 ( Mod Header 크롬 확장프로그램으로 authorization-token 값 검증)
+        var userId = request.getHeader("x-user-id");
 
-        var accessToken = request.getHeader("authorization-token");
-
-        if (accessToken == null) {
-            throw new ApiException(TokenErrorCode.AUTHORIZATION_TOKEN_NOT_FOUND);
+        if (userId == null) {
+            throw new ApiException(ErrorCode.BAD_REQUEST, "x-user-id header 없음");
         }
 
-        var userId = tokenBusiness.validationAccessToken(accessToken);
+//        var userId = tokenBusiness.validationAccessToken(accessToken);
 
-        if (userId != null) {
+//        if (userId != null) {
             // 한가지 요청에 대해 글로벌하게 저장 할 수 있는 저장소에 저장
             var requestContext = Objects.requireNonNull(RequestContextHolder.getRequestAttributes());
 
             requestContext.setAttribute("userId", userId, RequestAttributes.SCOPE_REQUEST);
 
             return true;
-        }
+//        }
 
-        throw new ApiException(ErrorCode.BAD_REQUEST, "인증 실패");
+//        throw new ApiException(ErrorCode.BAD_REQUEST, "인증 실패");
     }
 }
