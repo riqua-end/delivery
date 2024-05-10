@@ -59,7 +59,7 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
 
     // logstash
-    //implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.3'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.3'
 
 }
 

@@ -99,3 +99,6 @@
   }
 }  
 18:46:53.679 [http-nio-8181-exec-8] INFO  o.delivery.api.filter.LoggerFilter [org.delivery.api.filter.LoggerFilter] [doFilter] [62] <<<< uri : /open-api/user/login , method : POST , header : [Content-Type : application/json]  , body : {"result":{"result_code":200,"result_message":"성공","result_description":"성공"},"body":{"access_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjMsImV4cCI6MTcxNTMzODAxM30.HK_8U18W1ZZLrlTGyw1Zpt4GQF-ejktiQ7YPxHbivKE","access_token_expired_at":"2024-05-10T19:46:53.6756693","refresh_token":"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjMsImV4cCI6MTcxNTM3NzYxM30.5QvYH32eWG_gmu-QmxZzWroTL6NSej8nO_up5WxtasI","refresh_token_expired_at":"2024-05-11T06:46:53.6769899"}} 
+18:52:13.879 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [destroy] [650] Closing JPA EntityManagerFactory for persistence unit 'default' 
+18:52:13.884 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [com.zaxxer.hikari.HikariDataSource] [close] [350] HikariPool-1 - Shutdown initiated... 
+18:52:13.901 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource [com.zaxxer.hikari.HikariDataSource] [close] [352] HikariPool-1 - Shutdown completed. 
