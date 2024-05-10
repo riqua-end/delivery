@@ -1,9 +1,10 @@
+<!--
 <configuration>
     <springProperty scope="context" name="server.name" source="server.name"/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        &lt;!&ndash; encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default &ndash;&gt;
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%class] [%method] [%line] %msg %n</pattern>
         </encoder>
@@ -12,10 +13,10 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logFile.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- daily rollover -->
+            &lt;!&ndash; daily rollover &ndash;&gt;
             <fileNamePattern>logFile.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
 
-            <!-- keep 30 days' worth of history capped at 3GB total size -->
+            &lt;!&ndash; keep 30 days' worth of history capped at 3GB total size &ndash;&gt;
             <maxHistory>30</maxHistory>
             <totalSizeCap>3GB</totalSizeCap>
 
@@ -27,12 +28,12 @@
     </appender>
 
     <appender name="STASH" class="net.logstash.logback.appender.LogstashAccessTcpSocketAppender">
-        <destination>localhost:5000</destination> <!-- logstash port -->
+        <destination>localhost:5000</destination> &lt;!&ndash; logstash port &ndash;&gt;
 
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <pattern>
-                    <!-- the pattern that defines what to include -->
+                    &lt;!&ndash; the pattern that defines what to include &ndash;&gt;
                     <pattern>
                         {
                             "level": "%level",
@@ -56,4 +57,4 @@
         <appender-ref ref="FILE" />
         <appender-ref ref="STASH" />
     </root>
-</configuration>
+</configuration>-->
