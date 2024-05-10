@@ -58,6 +58,9 @@ dependencies {
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
 
+    // logstash
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.3'
+
 }
 
 test {
