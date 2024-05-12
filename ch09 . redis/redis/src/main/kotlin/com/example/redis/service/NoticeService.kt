@@ -1,6 +1,7 @@
 package com.example.redis.service
 
 import com.example.redis.common.Log
+import com.example.redis.model.NoticeDto
 import com.example.redis.repository.NoticeRepository
 import org.springframework.cache.annotation.CachePut
 import org.springframework.cache.annotation.Cacheable
@@ -12,14 +13,14 @@ class NoticeService(
 ) {
     companion object: Log
 
-    @Cacheable(cacheNames = ["notice"], key = "#notice")
-    fun getNotice(notice: String?) : String?{
-        log.info("notice service get notice : {}", notice)
-        return noticeRepository.getNotice(notice)
+    @Cacheable(cacheNames = ["notice"], key = "#id") // notice::id
+    fun getNotice(id: Long?) : NoticeDto?{
+        log.info("notice service get notice : {}", id)
+        return noticeRepository.getNotice(id)
     }
 
-    @CachePut(cacheNames = ["notice"], key = "#notice") // #notice 는 매개변수의 notice
-    fun addNotice(notice: String?) : String?{
+    @CachePut(cacheNames = ["notice"], key = "#notice.id") // notice::id (auto-gen)
+    fun addNotice(notice: NoticeDto?) : NoticeDto?{
         log.info("notice add service notice : {}", notice)
         return noticeRepository.addNotice(notice)
     }

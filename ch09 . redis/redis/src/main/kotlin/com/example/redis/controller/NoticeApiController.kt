@@ -1,6 +1,7 @@
 package com.example.redis.controller
 
 import com.example.redis.common.Log
+import com.example.redis.model.NoticeDto
 import com.example.redis.service.NoticeService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -17,10 +18,10 @@ class NoticeApiController(
 
     @GetMapping("/get-notice")
     fun getNotice(
-        @RequestParam notice: String?
-    ): String?{
-        log.info("notice controller get notice : {}", notice)
-        val response = noticeService.getNotice(notice)
+        @RequestParam id: Long?
+    ): NoticeDto?{
+        log.info("notice controller get notice : {}", id)
+        val response = noticeService.getNotice(id)
         log.info("notice controller get notice response: {}", response)
         return response
     }
@@ -28,9 +29,9 @@ class NoticeApiController(
     @GetMapping("/add-notice")
     fun addNotice(
         @RequestParam notice: String?
-    ): String?{
+    ): NoticeDto?{
         log.info("notice controller add notice : {}", notice)
-        val response = noticeService.addNotice(notice)
+        val response = noticeService.addNotice(NoticeDto(notice = notice))
         log.info("notice controller add notice response: {}", response)
         return response
     }
